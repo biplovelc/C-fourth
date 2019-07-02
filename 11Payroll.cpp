@@ -13,8 +13,8 @@ class Payroll
 			hours = 0;
 			total = 0 ;
 		}
-		void setTotal(double r, int hr=17.5){
-			total = (double)r*17.5;
+		void setTotal(int hr, double r=17.5){
+			total = (double)hr*17.5;
 		}
 		
 		double getTotal(){

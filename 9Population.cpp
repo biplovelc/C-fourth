@@ -39,7 +39,7 @@ int main()
 		cout<<"Population cannot be negative!!!";
 	}
 	else{
-		cout<<"Birth rate = "<<rate.birthRate()<<endl;
+		cout<<"\nBirth rate = "<<rate.birthRate()<<endl;
 		cout<<"Death rate = "<<rate.deathRate();
 	}
 }

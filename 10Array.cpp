@@ -4,9 +4,10 @@ using namespace std;
 class Number
 {
 	private:
-		float array[];
+		double array[];
 		int num;
 	public:
+		Number(){}
 		Number(int n){
 			num = n;
 			array[n];
@@ -19,14 +20,14 @@ class Number
 			array[3] = a;
 		}
 		
-		double getNum(int a){
-			return array[a];
+		double getNum(){
+			return array[4];
 		}
 		
 		double highest()
 		{
 			int max = array[0];
-			for(int i=1; i<num; i++){
+			for(int i=1; i<7; i++){
 				if(array[i]>max){
 					max = array[i];
 				}
@@ -37,7 +38,7 @@ class Number
 		double lowest()
 		{
 			int min = array[0];
-			for(int i=1; i<num; i++){
+			for(int i=1; i<7; i++){
 				if(array[i]<min){
 					min = array[i];
 				}
@@ -47,21 +48,26 @@ class Number
 		
 		double average(){
 			double avg; int s=0;
-			for(int i=0; i<num; i++){
+			for(int i=0; i<7; i++){
 				s += array[i];
 			}
-			return s/num;
+			return (double)s/num;
 		}
 };
 
 int main()
 {
-	int size;
-	cout<<"Enter the size of array: ";
-	cin>>size;
+	Number *a;
 	
-	Number example[size]=;
-	{
-		cout<<"Highest = "<<example.highest();
-	}
+	
+	a = new Number[7]{1.2, 2.3, 4.5, 5.6, 6.7, 8.9,9.0};
+	
+	a->setNum(10.4);
+	cout<<"Retrived number = "<<a->getNum()<<endl;
+	cout<<"Highest number = "<<a->highest()<<endl;
+	cout<<"Lowest = "<<a->lowest()<<endl;
+	cout<<"Average = "<<a->average();
+	
+
+	
 }
