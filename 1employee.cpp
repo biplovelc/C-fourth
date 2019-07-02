@@ -74,16 +74,23 @@ class Employee
 
 int main()
 {
-	Employee e[3];
-	e[0]("Susan Meyers", 47899, "Accounting", "Vice President");
-	e[1]("Mark Jones", 39119, "Info Technology", "Programmer");
-	e[2]("Joy Rogers", 81774, "Manufacturing", "Engineer");
+	Employee e0("Susan Meyers", 47899, "Accounting", "Vice President");
+	Employee e1("Mark Jones", 39119, "Info Technology", "Programmer");
+	Employee e2("Joy Rogers", 81774, "Manufacturing", "Engineer");
 	cout<<"Name\t\tID Number\tDepartment\t\tPosition"<<endl;
-	for(int i=0; i<3; i++)
-	{
-		cout<<""<<e[i].getName()<<"\t";
-		cout<<""<<e[i].getId()<<"\t\t";
-		cout<<""<<e[i].getDepartment()<<"\t\t";
-		cout<<""<<e[i].getPosition()<<endl;
-	}
+	
+	cout<<""<<e0.getName()<<"\t";
+	cout<<""<<e0.getId()<<"\t\t";
+	cout<<""<<e0.getDepartment()<<"\t\t";
+	cout<<""<<e0.getPosition()<<endl;
+	
+	cout<<""<<e1.getName()<<"\t";
+	cout<<""<<e1.getId()<<"\t\t";
+	cout<<""<<e1.getDepartment()<<"\t\t";
+	cout<<""<<e1.getPosition()<<endl;
+	
+	cout<<""<<e2.getName()<<"\t";
+	cout<<""<<e2.getId()<<"\t\t";
+	cout<<""<<e2.getDepartment()<<"\t\t";
+	cout<<""<<e2.getPosition()<<endl;
 }
