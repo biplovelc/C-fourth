@@ -1,33 +1,35 @@
 #include<iostream>
 using namespace std;
 
-class Number
+class ArrayNumber
 {
 	private:
-		double array[];
-		int num;
+		int size;
+		double *array;
 	public:
-		Number(){}
-		Number(int n){
-			num = n;
-			array[n];
-		}
-		~Number(){
-			array[0];
-		}
-		
-		void setNum(int a){
-			array[3] = a;
-		}
-		
-		double getNum(){
-			return array[4];
-		}
-		
-		double highest()
+		ArrayNumber(int n)
 		{
-			int max = array[0];
-			for(int i=1; i<7; i++){
+			size = n;
+	  		array = new double(size);
+	  		
+	  		cout<<"Enter elements:\n";
+			for (int i = 0; i < size; i++) {
+	   			cin>>array[i]; 
+	  		};
+		}
+		
+		void store(int position, double number){
+			array[position] = number; 
+			cout<<"That value is stored."<<endl;
+		}
+		
+		double retrive(int a){
+			return array[a];
+		}	
+		
+		double highest(){
+			double max = array[0];
+			for(int i=1; i<size; i++){
 				if(array[i]>max){
 					max = array[i];
 				}
@@ -35,10 +37,9 @@ class Number
 			return max;
 		}
 		
-		double lowest()
-		{
-			int min = array[0];
-			for(int i=1; i<7; i++){
+		double lowest(){
+			double min = array[0];
+			for(int i=1; i<size; i++){
 				if(array[i]<min){
 					min = array[i];
 				}
@@ -47,27 +48,34 @@ class Number
 		}
 		
 		double average(){
-			double avg; int s=0;
-			for(int i=0; i<7; i++){
-				s += array[i];
+			double sum = 0;
+			for(int i=0; i<size; i++){
+				sum += array[i];
 			}
-			return (double)s/num;
+			return sum/size;
 		}
 };
 
 int main()
 {
-	Number *a;
-	
-	
-	a = new Number[7]{1.2, 2.3, 4.5, 5.6, 6.7, 8.9,9.0};
-	
-	a->setNum(10.4);
-	cout<<"Retrived number = "<<a->getNum()<<endl;
-	cout<<"Highest number = "<<a->highest()<<endl;
-	cout<<"Lowest = "<<a->lowest()<<endl;
-	cout<<"Average = "<<a->average();
-	
+	int n;
+	cout<<"Enter the size of array: ";
+	cin>>n;
 
+	ArrayNumber a(n);
+	
+	int position; double number;
+	cout<<"Enter positions and number you want to store:\n";
+	cin>>position>>number;
+	a.store(position, number);
+	
+	int pos;
+	cout<<"Enter a location of number you want: ";
+	cin>>pos;
+	cout<<"Retrived number = "<<a.retrive(pos)<<endl;
+	
+	cout<<"\nHighest number = "<<a.highest();
+	cout<<"\nLowest number = "<<a.lowest();
+	cout<<"\nAverage number = "<<a.average();
 	
 }
