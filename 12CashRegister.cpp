@@ -12,8 +12,7 @@ class Inventory
 			cost = c;
 		}
 		~Inventory(){
-			quantity = 0;
-			cout<<"Quantity destroyed";
+			cout<<"\nQuantity destroyed";
 		}
 		
 		int getQuantity(){
@@ -28,42 +27,31 @@ class Inventory
 class CashRegister
 {
 	private:
-		int item;
-		int quantity;
-		Inventory c;
+		Inventory* obj;
+		int item, quantity;
 		double total;
 	public:
-		void setAll(int i, int q, Inventory c)
-		{
+		CashRegister(Inventory* ob, int i, int q){
+			obj = ob;
 			item = i;
 			quantity = q;
-			c.getCost();
+			total = (double)quantity*obj->getCost();
 		}
-		
-		double getitemCost(){
-			return c.getCost();
-		}
-		
 		double getTotal(){
-			return c.getCost()*quantity;
+			return total;
 		}
 };
 
 int main()
 {
-	Inventory i(22, 120.5);
-	int a, b;
-	cout<<"Enter item and quantity of purchase:\n";
-	cin>>a>>b;
+	Inventory i(10, 11.5);
 	
-	CashRegister cash;
-	cash.setAll(a, b);
+	int item, quantity;
+	cout<<"Enter item and quantity:\n";
+	cin>>item>>quantity;
 	
-	if(a<0){
-		cout<<"Invalid input!!!";
-	} 
-	else{
-		cout<<"Item's cost = "<<cash.getitemCost()<<endl;
-		cout<<"Total purchase = "<<cash.getTotal()<<endl;
-	}
+	CashRegister c(&i, item, quantity);
+	cout<<"Total = "<<c.getTotal();
+	
+	
 }

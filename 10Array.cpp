@@ -29,7 +29,7 @@ class ArrayNumber
 		}
 		
 		double retrive(int a){
-			cout<<"/nDestructed!!";
+			return array[a];
 		}	
 		
 		double highest(){
