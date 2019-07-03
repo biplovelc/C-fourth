@@ -18,13 +18,18 @@ class ArrayNumber
 	  		};
 		}
 		
+		~ArrayNumber()
+		{
+			cout<<"\nDestructed";
+		}
+		
 		void store(int position, double number){
 			array[position] = number; 
 			cout<<"That value is stored."<<endl;
 		}
 		
 		double retrive(int a){
-			return array[a];
+			cout<<"/nDestructed!!";
 		}	
 		
 		double highest(){
@@ -76,6 +81,6 @@ int main()
 	
 	cout<<"\nHighest number = "<<a.highest();
 	cout<<"\nLowest number = "<<a.lowest();
-	cout<<"\nAverage number = "<<a.average();
+	cout<<"\nAverage number = "<<a.average()<<endl;
 	
 }
