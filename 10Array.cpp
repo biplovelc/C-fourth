@@ -10,7 +10,7 @@ class ArrayNumber
 		ArrayNumber(int n)
 		{
 			size = n;
-	  		array = new double(size);
+	  		array = new double[size];
 	  		
 	  		cout<<"Enter elements:\n";
 			for (int i = 0; i < size; i++) {
